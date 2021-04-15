@@ -153,7 +153,7 @@ const SignUpForm = (props) => {
             check = checkUserNameAndEmail(userName, email)
         }
         if (check) {
-            axios.post(`https://my-project-database-c4a55-default-rtdb.firebaseio.com/.json`,passData)
+            // axios.post(`https://my-project-database-c4a55-default-rtdb.firebaseio.com/.json`,passData)
             formFilledHandler()
         }
     }

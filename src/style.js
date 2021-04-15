@@ -79,3 +79,21 @@ export const ModalHeadder = styled.div`
   align-items:flex-end;  
   margin-bottom: 24px;
 `
+export const DialogContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+export const SuccessImg = styled.img`
+  height: 48px;
+  width: 48px;
+  margin: 24px auto 18px;
+`
+export const DialogHeadder = styled.div`
+  align-self: center;
+  text-size:30px;
+  font-weight: 500;
+  color: green;
+`
+export const ButtonText = styled.span`
+  font-size: large;
+`

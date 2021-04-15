@@ -1,5 +1,18 @@
 import React, { useState, useEffect} from "react";
-import {MainContainer, Button, ButtonContainer} from '../style';
+import {
+    MainContainer,
+    Button, 
+    ButtonContainer, 
+    Img, 
+    ModalHeadder, 
+    HeaddingDiv,
+    DialogContainer,
+    DialogHeadder,
+    SuccessImg,
+    ButtonText
+} from '../style';
+import CancelButton from "../icons/circle.svg";
+import SuccessButton from "../icons/checkLight.png"; 
 import Modal from "../Components/Modal";
 import SignUpForm from "./SignUpForm";
 import axios from 'axios'
@@ -21,6 +34,7 @@ const MainPage = () => {
     const [formValue, setFormValue] = useState(formReset)
     const [passwordDisplay, updatePasswordDisplay] = useState(passReset)
     const [modalState, setModalState] = useState(false)
+    const [dialogState, setDialogState] = useState(false)
     const [dataBase, setDataBase] = useState(null)
 
     useEffect(() => {
@@ -81,6 +95,8 @@ const MainPage = () => {
     }
 
     const formFilledHandler = () => {
+        ModalHandler()
+        DialogHandler()
         setFormValue(formReset)
         updatePasswordDisplay(passReset)
     }
@@ -88,15 +104,22 @@ const MainPage = () => {
     const ModalHandler = () => {
         setModalState((current) => !current)
       }
+    const DialogHandler = () => {
+        setDialogState((current) => !current)
+    }
 
     return(
         <MainContainer>
             <ButtonContainer>
                 <Button onClick={ModalHandler}>Sign-Up</Button>
-                <Button>Login</Button>
+                <Button onClick={DialogHandler}>Login</Button>
             </ButtonContainer>
             {modalState &&
             <Modal onClick={ModalHandler}>
+                <ModalHeadder>
+                    <HeaddingDiv>Please Enter The Following Details</HeaddingDiv>
+                    <Img src={CancelButton} alt="Close Logo" onClick={ModalHandler}/>
+                </ModalHeadder>
                 <SignUpForm 
                 formFilledHandler ={formFilledHandler}
                 onChange={inputHandler} 
@@ -108,6 +131,18 @@ const MainPage = () => {
                 confirmPass = {passwordDisplay.passConf}
                 passData = {formValue}
                 dataBase = {dataBase} />
+            </Modal>}
+            {dialogState &&
+            <Modal>
+                <DialogContainer>
+                    <SuccessImg src={SuccessButton} alt="Success Logo"/>
+                    <DialogHeadder>Account Created !!</DialogHeadder>
+                    <Button onClick={DialogHandler}>
+                        <ButtonText>
+                            OK
+                        </ButtonText>
+                    </Button>
+                </DialogContainer>
             </Modal>}
         </MainContainer>
     )
