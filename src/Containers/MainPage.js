@@ -9,23 +9,13 @@ import {
     DialogHeadder,
     SuccessImg,
     ButtonText,
-    TestInput,
-    InputCover,
-    InputImg,
-    LoginModalHeadder,
-    MainHeadL,
-    SubHeadL,
-    LoginButton,
-    LinkText
+    LoginButton
 } from '../style';
 import CancelButton from "../icons/cancel.svg";
 import SuccessButton from "../icons/checkLight.png"; 
-import UserIcon from "../icons/user.svg";
-import LockIcon from "../icons/lock.svg";
-import eyeVisible from "../icons/eyeVisible.png";
-import eyeInVisible from "../icons/eyeInVisible.png";
 import Modal from "../Components/Modal";
 import SignUpForm from "./SignUpForm";
+import LoginForm from "./LoginPage";
 import axios from 'axios'
 
 const MainPage = () => {
@@ -48,10 +38,6 @@ const MainPage = () => {
     const [loginModalState, setLoginModalState] = useState(false)
     const [dialogState, setDialogState] = useState(false)
     const [dataBase, setDataBase] = useState(null)
-    const [passwordStatus, setPasswordStatus] = useState({
-        key:'visible',
-        value: eyeVisible
-    })
 
     useEffect(() => {
         axios.get(`https://my-project-database-c4a55-default-rtdb.firebaseio.com/.json`)
@@ -126,15 +112,6 @@ const MainPage = () => {
     const DialogHandler = () => {
         setDialogState((current) => !current)
     }
-    const HandlePassWordDisplay = () => {
-        let {key, value} = ''
-        passwordStatus.key === 'visible'
-        ?  (() => {key = 'invisible'
-         value = eyeInVisible})()
-        :  (() => {key = 'visible'
-         value = eyeVisible})()
-        setPasswordStatus({key,value})
-    }
     const HandleSignUp = () => {
         LoginModalhandler()
         ModalHandler()
@@ -166,25 +143,7 @@ const MainPage = () => {
             </Modal>}
             {loginModalState &&
             <Modal>
-                <LoginModalHeadder>
-                    <MainHeadL>Login</MainHeadL>
-                    <SubHeadL>Enter your details below to continue</SubHeadL>
-                </LoginModalHeadder>
-                <InputCover>
-                    <InputImg src={UserIcon} alt="Close Logo"/>
-                    <TestInput />
-                </InputCover>
-                <InputCover>
-                    <InputImg src={LockIcon} alt="Close Logo"/>
-                    <TestInput />
-                    <InputImg src={passwordStatus.value} alt="Password Status" onClick={HandlePassWordDisplay} />
-                </InputCover>
-                <ButtonContainer>
-                    <LoginButton onClick={LoginModalhandler}>NEXT</LoginButton>
-                </ButtonContainer>
-                <SubHeadL style = {{marginTop:'42px',marginBottom:'12px'}}>
-                    Don,t have an account ? <LinkText onClick={HandleSignUp}>Sign up here </LinkText>
-                </SubHeadL>
+                <LoginForm HandleSignUp={HandleSignUp} LoginModalhandler={LoginModalhandler}/>
             </Modal>}
             {dialogState &&
             <Modal>
