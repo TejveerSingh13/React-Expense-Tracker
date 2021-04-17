@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const MainContainer = styled.div`
-  background-color: #282c34;
+  background-color: #e6faff;
   position: fixed;
   top: 0;
   right: 0;
@@ -31,10 +31,13 @@ export const FormContainer = styled.div`
 `
 export const Input = styled.input`
   border:none;
-  border-bottom: 2px solid #282c34;
+  border-bottom: 2px solid #bfbfbf;
   margin:8px 8px 24px;
   outline:none;
   width: -webkit-fill-available;
+  &:focus {
+    border-bottom: 2px solid #99ebff; 
+  }
 `
 export const LabelInput = styled.p`
   margin:0 0 0 8px;
@@ -50,32 +53,25 @@ export const ButtonContainer = styled.div`
   display:flex;
   align-items:center;
 `
-export const Button = styled.button`
-  margin: 24px auto 0;
-  height:32px;
-  width:144px;
-  border-radius:20px;
-  &:hover {
-    cursor: pointer;
-  }
-`
 export const HeaddingDiv = styled.p`
   align-self:flex-start;
-  text-size:21px;
+  font-size: x-large;
   font-weight: 500;
+  color: #0099cc;
+  text-shadow: 0 0 9px #99ebff;
   @media (min-width: 558px) {
     margin-left:18px;
   }
 `
 export const Img = styled.img`
-  height:24px;
-  width:24px;
-  margin: auto 4px 18px auto;
+  height:16px;
+  width:16px;
+  margin: auto 18px 61px auto;
 `
 export const ModalHeadder = styled.div`
   display:flex;
   align-items:flex-end;  
-  margin-bottom: 24px;
+  margin-bottom: 0;
 `
 export const DialogContainer = styled.div`
   display: flex;
@@ -110,7 +106,7 @@ export const InputCover = styled.div`
   border-bottom: 1px solid #bfbfbf;
   display:flex;
   width: 280px;
-  margin: 8px auto 0;
+  margin: 8px auto 21px;
   &:focus-within {
     border-bottom: 2px solid #99ebff;
   }
@@ -135,7 +131,7 @@ export const SubHeadL = styled.h4`
   }
 `
 export const LoginButton = styled.button`
-  margin: 48px auto 0;
+  margin: 27px auto 0;
   height:32px;
   border: none;
   width:144px;

@@ -1,7 +1,7 @@
 import React, {Fragment, useState} from "react";
 import { Container, Row, Col } from "react-grid-system";
 import InputField from '../Components/InputField';
-import {Button, ButtonContainer} from '../style';
+import {LoginButton, ButtonContainer} from '../style';
 import axios from 'axios'
 
 const SignUpForm = (props) => {
@@ -218,7 +218,7 @@ const SignUpForm = (props) => {
                 </Row>
             </Container>
             <ButtonContainer>
-                    <Button onClick={updateDataHandler}>Sign Me UP !</Button>
+                    <LoginButton onClick={updateDataHandler}>Sign up</LoginButton>
             </ButtonContainer>
         </Fragment>
     )

@@ -1,7 +1,6 @@
 import React, { useState, useEffect} from "react";
 import {
     MainContainer,
-    Button, 
     ButtonContainer, 
     Img, 
     ModalHeadder, 
@@ -19,7 +18,7 @@ import {
     LoginButton,
     LinkText
 } from '../style';
-import CancelButton from "../icons/circle.svg";
+import CancelButton from "../icons/cancel.svg";
 import SuccessButton from "../icons/checkLight.png"; 
 import UserIcon from "../icons/user.svg";
 import LockIcon from "../icons/lock.svg";
@@ -144,8 +143,8 @@ const MainPage = () => {
     return(
         <MainContainer>
             <ButtonContainer>
-                <Button onClick={ModalHandler}>Sign-Up</Button>
-                <Button onClick={LoginModalhandler}>Login</Button>
+                <LoginButton onClick={ModalHandler}>Sign-Up</LoginButton>
+                <LoginButton onClick={LoginModalhandler}>Login</LoginButton>
             </ButtonContainer>
             {signUpModalState &&
             <Modal>
@@ -192,11 +191,11 @@ const MainPage = () => {
                 <DialogContainer>
                     <SuccessImg src={SuccessButton} alt="Success Logo"/>
                     <DialogHeadder>Account Created !!</DialogHeadder>
-                    <Button onClick={DialogHandler}>
+                    <LoginButton onClick={DialogHandler}>
                         <ButtonText>
                             OK
                         </ButtonText>
-                    </Button>
+                    </LoginButton>
                 </DialogContainer>
             </Modal>}
         </MainContainer>
