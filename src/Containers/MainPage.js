@@ -9,10 +9,22 @@ import {
     DialogContainer,
     DialogHeadder,
     SuccessImg,
-    ButtonText
+    ButtonText,
+    TestInput,
+    InputCover,
+    InputImg,
+    LoginModalHeadder,
+    MainHeadL,
+    SubHeadL,
+    LoginButton,
+    LinkText
 } from '../style';
 import CancelButton from "../icons/circle.svg";
 import SuccessButton from "../icons/checkLight.png"; 
+import UserIcon from "../icons/user.svg";
+import LockIcon from "../icons/lock.svg";
+import eyeVisible from "../icons/eyeVisible.png";
+import eyeInVisible from "../icons/eyeInVisible.png";
 import Modal from "../Components/Modal";
 import SignUpForm from "./SignUpForm";
 import axios from 'axios'
@@ -33,9 +45,14 @@ const MainPage = () => {
     }
     const [formValue, setFormValue] = useState(formReset)
     const [passwordDisplay, updatePasswordDisplay] = useState(passReset)
-    const [modalState, setModalState] = useState(false)
+    const [signUpModalState, setSignUpModalState] = useState(false)
+    const [loginModalState, setLoginModalState] = useState(false)
     const [dialogState, setDialogState] = useState(false)
     const [dataBase, setDataBase] = useState(null)
+    const [passwordStatus, setPasswordStatus] = useState({
+        key:'visible',
+        value: eyeVisible
+    })
 
     useEffect(() => {
         axios.get(`https://my-project-database-c4a55-default-rtdb.firebaseio.com/.json`)
@@ -102,20 +119,36 @@ const MainPage = () => {
     }
     
     const ModalHandler = () => {
-        setModalState((current) => !current)
+        setSignUpModalState((current) => !current)
       }
+    const LoginModalhandler = () => {
+        setLoginModalState((current) => !current)
+    }
     const DialogHandler = () => {
         setDialogState((current) => !current)
+    }
+    const HandlePassWordDisplay = () => {
+        let {key, value} = ''
+        passwordStatus.key === 'visible'
+        ?  (() => {key = 'invisible'
+         value = eyeInVisible})()
+        :  (() => {key = 'visible'
+         value = eyeVisible})()
+        setPasswordStatus({key,value})
+    }
+    const HandleSignUp = () => {
+        LoginModalhandler()
+        ModalHandler()
     }
 
     return(
         <MainContainer>
             <ButtonContainer>
                 <Button onClick={ModalHandler}>Sign-Up</Button>
-                <Button onClick={DialogHandler}>Login</Button>
+                <Button onClick={LoginModalhandler}>Login</Button>
             </ButtonContainer>
-            {modalState &&
-            <Modal onClick={ModalHandler}>
+            {signUpModalState &&
+            <Modal>
                 <ModalHeadder>
                     <HeaddingDiv>Please Enter The Following Details</HeaddingDiv>
                     <Img src={CancelButton} alt="Close Logo" onClick={ModalHandler}/>
@@ -131,6 +164,28 @@ const MainPage = () => {
                 confirmPass = {passwordDisplay.passConf}
                 passData = {formValue}
                 dataBase = {dataBase} />
+            </Modal>}
+            {loginModalState &&
+            <Modal>
+                <LoginModalHeadder>
+                    <MainHeadL>Login</MainHeadL>
+                    <SubHeadL>Enter your details below to continue</SubHeadL>
+                </LoginModalHeadder>
+                <InputCover>
+                    <InputImg src={UserIcon} alt="Close Logo"/>
+                    <TestInput />
+                </InputCover>
+                <InputCover>
+                    <InputImg src={LockIcon} alt="Close Logo"/>
+                    <TestInput />
+                    <InputImg src={passwordStatus.value} alt="Password Status" onClick={HandlePassWordDisplay} />
+                </InputCover>
+                <ButtonContainer>
+                    <LoginButton onClick={LoginModalhandler}>NEXT</LoginButton>
+                </ButtonContainer>
+                <SubHeadL style = {{marginTop:'42px',marginBottom:'12px'}}>
+                    Don,t have an account ? <LinkText onClick={HandleSignUp}>Sign up here </LinkText>
+                </SubHeadL>
             </Modal>}
             {dialogState &&
             <Modal>

@@ -16,7 +16,6 @@ width:100%;
 z-index:1;
 backdrop-filter: blur(5px);
 `
-
 export const FormContainer = styled.div`
   margin: 20px auto;
   border: solid;
@@ -47,19 +46,19 @@ export const LabelInputError = styled.p`
   font-size: 12px;
   color:red;
 `
-
 export const ButtonContainer = styled.div`
   display:flex;
   align-items:center;
 `
-
 export const Button = styled.button`
   margin: 24px auto 0;
   height:32px;
   width:144px;
   border-radius:20px;
+  &:hover {
+    cursor: pointer;
+  }
 `
-
 export const HeaddingDiv = styled.p`
   align-self:flex-start;
   text-size:21px;
@@ -68,7 +67,6 @@ export const HeaddingDiv = styled.p`
     margin-left:18px;
   }
 `
-
 export const Img = styled.img`
   height:24px;
   width:24px;
@@ -96,4 +94,63 @@ export const DialogHeadder = styled.div`
 `
 export const ButtonText = styled.span`
   font-size: large;
+`
+export const TestInput = styled.input`
+  border: none;
+  outline: none;
+  margin-left:8px;
+  width:85%;
+`
+export const InputImg = styled.img`
+  height: 18px;
+  width: 18px;
+  margin: 4px;
+`
+export const InputCover = styled.div`
+  border-bottom: 1px solid #bfbfbf;
+  display:flex;
+  width: 280px;
+  margin: 8px auto 0;
+  &:focus-within {
+    border-bottom: 2px solid #99ebff;
+  }
+`
+export const LoginModalHeadder = styled.div`
+  display:flex;
+  flex-direction: column;
+`
+export const MainHeadL = styled.h1`
+  margin: 96px auto 16px 10px;
+  color: #0099cc;
+  text-shadow: 0 0 9px #99ebff;
+  @media (min-width: 558px) {
+    margin: 96px auto 16px 60px;
+  }
+`
+export const SubHeadL = styled.h4`
+  margin: 8px auto 26px 10px;
+  color: #404040;
+  @media (min-width: 558px) {
+    margin: 8px auto 26px 60px;
+  }
+`
+export const LoginButton = styled.button`
+  margin: 48px auto 0;
+  height:32px;
+  border: none;
+  width:144px;
+  border-radius:20px;
+  color: white;
+  box-shadow:0 0 9px #99ebff;
+  background-color:#0099cc;
+  &:hover {
+    cursor: pointer;
+  }
+`
+export const LinkText = styled.span`
+  color:#0099cc;
+  text-shadow: 0 0 9px #99ebff;
+  &:hover {
+    cursor: pointer;
+  }
 `
