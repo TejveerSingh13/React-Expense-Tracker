@@ -1,24 +1,26 @@
 {
   "files": {
     "main.css": "/React-Forms-Project/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/React-Forms-Project/static/js/main.298fd25f.chunk.js",
-    "main.js.map": "/React-Forms-Project/static/js/main.298fd25f.chunk.js.map",
+    "main.js": "/React-Forms-Project/static/js/main.5946db56.chunk.js",
+    "main.js.map": "/React-Forms-Project/static/js/main.5946db56.chunk.js.map",
     "runtime-main.js": "/React-Forms-Project/static/js/runtime-main.1bb82dd5.js",
     "runtime-main.js.map": "/React-Forms-Project/static/js/runtime-main.1bb82dd5.js.map",
-    "static/js/2.6ac87b6e.chunk.js": "/React-Forms-Project/static/js/2.6ac87b6e.chunk.js",
-    "static/js/2.6ac87b6e.chunk.js.map": "/React-Forms-Project/static/js/2.6ac87b6e.chunk.js.map",
+    "static/js/2.70fae27c.chunk.js": "/React-Forms-Project/static/js/2.70fae27c.chunk.js",
+    "static/js/2.70fae27c.chunk.js.map": "/React-Forms-Project/static/js/2.70fae27c.chunk.js.map",
     "static/js/3.72b8b518.chunk.js": "/React-Forms-Project/static/js/3.72b8b518.chunk.js",
     "static/js/3.72b8b518.chunk.js.map": "/React-Forms-Project/static/js/3.72b8b518.chunk.js.map",
     "index.html": "/React-Forms-Project/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/React-Forms-Project/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.6ac87b6e.chunk.js.LICENSE.txt": "/React-Forms-Project/static/js/2.6ac87b6e.chunk.js.LICENSE.txt",
+    "static/js/2.70fae27c.chunk.js.LICENSE.txt": "/React-Forms-Project/static/js/2.70fae27c.chunk.js.LICENSE.txt",
     "static/media/checkLight.1c1b610a.png": "/React-Forms-Project/static/media/checkLight.1c1b610a.png",
-    "static/media/circle.19930e56.svg": "/React-Forms-Project/static/media/circle.19930e56.svg"
+    "static/media/circle.19930e56.svg": "/React-Forms-Project/static/media/circle.19930e56.svg",
+    "static/media/lock.4b6885f8.svg": "/React-Forms-Project/static/media/lock.4b6885f8.svg",
+    "static/media/user.e559be5f.svg": "/React-Forms-Project/static/media/user.e559be5f.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.1bb82dd5.js",
-    "static/js/2.6ac87b6e.chunk.js",
+    "static/js/2.70fae27c.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.298fd25f.chunk.js"
+    "static/js/main.5946db56.chunk.js"
   ]
 }
