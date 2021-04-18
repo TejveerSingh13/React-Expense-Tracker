@@ -143,7 +143,7 @@ const MainPage = () => {
             </Modal>}
             {loginModalState &&
             <Modal>
-                <LoginForm HandleSignUp={HandleSignUp} LoginModalhandler={LoginModalhandler}/>
+                <LoginForm HandleSignUp={HandleSignUp} LoginModalhandler={LoginModalhandler} dataBase={dataBase}/>
             </Modal>}
             {dialogState &&
             <Modal>

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 
 export const MainContainer = styled.div`
   background-color: #e6faff;
@@ -13,6 +13,7 @@ position: fixed;
 top: 0;
 left: 0;
 width:100%;
+height:100%;
 z-index:1;
 backdrop-filter: blur(5px);
 `
@@ -149,4 +150,42 @@ export const LinkText = styled.span`
   &:hover {
     cursor: pointer;
   }
+`
+const fadeIn = keyframes`
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+`
+const fadeOut = keyframes`
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`
+export const LoginErrorContainer = styled.div`
+  position: fixed;
+  margin: 24px 0 0 60px;
+  padding: 4px 8px;
+  border: 1px solid #0099cc;
+  background-color: #e6faff;
+  border-radius: 12px;
+  visibility: ${props => props.out ? 'visible' : 'hidden'};
+  animation: ${props => props.out ? fadeIn : fadeOut} 0.3s linear;
+  transition: visibility 0.3s linear;
+  @media (min-width: 558px) {
+    margin: 24px 0 0 109px;
+  }
+`
+export const LoginErrorLabel = styled.label`
+  color:red;
+`
+export const LoginErrorImg = styled.img`
+  height: 9px;
+  width: 9px;
+  margin: 0 4px 2px 16px;
 `
