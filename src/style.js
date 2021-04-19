@@ -1,4 +1,5 @@
 import styled, { keyframes } from 'styled-components'
+import DetailBgImg from "../src/icons/BlueBg.jpeg";
 
 export const MainContainer = styled.div`
   background-color: #e6faff;
@@ -188,4 +189,49 @@ export const LoginErrorImg = styled.img`
   height: 9px;
   width: 9px;
   margin: 0 4px 2px 16px;
+`
+export const DisplayWrapper = styled.div`
+  width: 100%;
+  font-weight:500;
+  background: url(${DetailBgImg});
+  padding-top:200px;
+  padding-bottom:40px;
+  background-attachment: fixed;
+  background-position: 100% 91%;
+  background-repeat: no-repeat;
+  @media (min-width: 558px) {
+    box-shadow:0 0 24px #00ccff;
+  }
+`
+export const DisplayNameWrapper = styled.div`
+  margin 20px 24px 0;
+  color:white;  
+  text-shadow: 0 0 3px #99ebff;
+  @media (min-width: 558px) {
+    margin: 20px 0 0 69px;
+  }
+`
+export const DisplayNameHeadder = styled.p`
+  margin-bottom:0;
+  margin-top:8px;
+  color: ${props => props.title ? '#0099cc' : null};
+  font-size: ${props => props.data? 'large' : null};
+  font-weight: ${props => props.data? '500' : null};
+  margin-top: ${props => props.data? '4px' : null}
+` 
+export const DisplayDataContainer = styled.div`
+  margin: 24px 16px 8px;
+  @media (min-width: 558px) {
+    margin:24px auto;
+    width:45%;
+    padding: 24px 64px;
+    border-radius: 12px;
+    box-shadow:0 0 10px #99ebff;
+  }
+`
+export const BackIcon = styled.img`
+  height:24px;
+  width:24px;
+  position: fixed;
+  margin: -181px 1px 0px 18px;
 `
