@@ -1,4 +1,5 @@
-import React, { useState, useEffect} from "react";
+import React, { useState, useEffect, Fragment} from "react";
+import { useHistory } from "react-router-dom";
 import {
     MainContainer,
     ButtonContainer, 
@@ -16,10 +17,11 @@ import SuccessButton from "../icons/checkLight.png";
 import Modal from "../Components/Modal";
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginPage";
-import axios from 'axios'
+import axios from 'axios';
 
 const MainPage = () => {
     
+    const history = useHistory();
     const formReset = {
         fullName : '',
         userName : '',
@@ -116,48 +118,57 @@ const MainPage = () => {
         LoginModalhandler()
         ModalHandler()
     }
+    const HandleLogin = () => {
+        history.push('/details')
+    }
 
     return(
-        <MainContainer>
-            <ButtonContainer>
-                <LoginButton onClick={ModalHandler}>Sign-Up</LoginButton>
-                <LoginButton onClick={LoginModalhandler}>Login</LoginButton>
-            </ButtonContainer>
-            {signUpModalState &&
-            <Modal>
-                <ModalHeadder>
-                    <HeaddingDiv>Please Enter The Following Details</HeaddingDiv>
-                    <Img src={CancelButton} alt="Close Logo" onClick={ModalHandler}/>
-                </ModalHeadder>
-                <SignUpForm 
-                formFilledHandler ={formFilledHandler}
-                onChange={inputHandler} 
-                fullName = {formValue.fullName}
-                userName = {formValue.userName}
-                mobile = {formValue.mobile}
-                email = {formValue.emailId}
-                password = {passwordDisplay.passsNew}
-                confirmPass = {passwordDisplay.passConf}
-                passData = {formValue}
-                dataBase = {dataBase} />
-            </Modal>}
-            {loginModalState &&
-            <Modal>
-                <LoginForm HandleSignUp={HandleSignUp} LoginModalhandler={LoginModalhandler} dataBase={dataBase}/>
-            </Modal>}
-            {dialogState &&
-            <Modal>
-                <DialogContainer>
-                    <SuccessImg src={SuccessButton} alt="Success Logo"/>
-                    <DialogHeadder>Account Created !!</DialogHeadder>
-                    <LoginButton onClick={DialogHandler}>
-                        <ButtonText>
-                            OK
-                        </ButtonText>
-                    </LoginButton>
-                </DialogContainer>
-            </Modal>}
-        </MainContainer>
+        <Fragment>
+            <MainContainer>
+                <ButtonContainer>
+                    <LoginButton onClick={ModalHandler}>Sign-Up</LoginButton>
+                    <LoginButton onClick={LoginModalhandler}>Login</LoginButton>
+                </ButtonContainer>
+                {signUpModalState &&
+                <Modal>
+                    <ModalHeadder>
+                        <HeaddingDiv>Please Enter The Following Details</HeaddingDiv>
+                        <Img src={CancelButton} alt="Close Logo" onClick={ModalHandler}/>
+                    </ModalHeadder>
+                    <SignUpForm 
+                    formFilledHandler ={formFilledHandler}
+                    onChange={inputHandler} 
+                    fullName = {formValue.fullName}
+                    userName = {formValue.userName}
+                    mobile = {formValue.mobile}
+                    email = {formValue.emailId}
+                    password = {passwordDisplay.passsNew}
+                    confirmPass = {passwordDisplay.passConf}
+                    passData = {formValue}
+                    dataBase = {dataBase} />
+                </Modal>}
+                {loginModalState &&
+                <Modal>
+                    <LoginForm 
+                    HandleSignUp={HandleSignUp} 
+                    LoginModalhandler={LoginModalhandler} 
+                    dataBase={dataBase} 
+                    HandleLogin={HandleLogin}/>
+                </Modal>}
+                {dialogState &&
+                <Modal>
+                    <DialogContainer>
+                        <SuccessImg src={SuccessButton} alt="Success Logo"/>
+                        <DialogHeadder>Account Created !!</DialogHeadder>
+                        <LoginButton onClick={DialogHandler}>
+                            <ButtonText>
+                                OK
+                            </ButtonText>
+                        </LoginButton>
+                    </DialogContainer>
+                </Modal>}
+            </MainContainer>
+        </Fragment>
     )
 }
 

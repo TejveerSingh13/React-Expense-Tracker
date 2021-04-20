@@ -1,5 +1,4 @@
 import React, { useState, Fragment} from "react";
-// import { useHistory } from 'react-router-dom';
 import {
     ButtonContainer, 
     TestInput,
@@ -22,7 +21,6 @@ import eyeInVisible from "../icons/eyeInVisible.png";
 
 const LoginPage = (props) => {
 
-    // const history = useHistory();
     const resetData = {
         userDetail : '',
         enteredpass : ''
@@ -108,9 +106,7 @@ const LoginPage = (props) => {
                 return (!showInvalid)
             })
             if (!showInvalid && !state) {
-                props.LoginModalhandler()
-                // console.log('here');
-                // history.push('/details')
+                props.HandleLogin()
             }
         }
     }
@@ -158,9 +154,9 @@ const LoginPage = (props) => {
             </ButtonContainer>
             <SubHeadL style = {{marginTop:'42px',marginBottom:'12px'}}>
                 Don,t have an account ? <LinkText onClick={props.HandleSignUp}>Sign up here </LinkText>
-            </SubHeadL>
+            </SubHeadL>    
         </Fragment>
-    )
+   )
 }
 
 export default LoginPage

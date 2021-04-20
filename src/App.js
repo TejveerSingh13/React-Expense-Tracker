@@ -1,21 +1,16 @@
 import React from 'react';
 import { 
-  BrowserRouter as Router,
-  Switch,
+  HashRouter as Router,
   Route
  } from "react-router-dom";
 import MainPage from "./Containers/MainPage";
 import DisplayDetails from "./Components/DisplayDetails";
 const App = () => {
-
   return (
-    <Router>
-      <Switch>
-        <Route exact path="/"><MainPage /></Route>
-        <Route path="/details"><DisplayDetails /></Route>
-      </Switch>
-    </Router>
-    
+    <Router basename="/">
+      <Route path='/' exact component={MainPage} />
+      <Route path='/details' exact component={DisplayDetails} />
+    </Router>   
   );
 }
 
