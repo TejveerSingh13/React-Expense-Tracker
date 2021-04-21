@@ -95,18 +95,20 @@ const LoginPage = (props) => {
         const flag =validateError()
         if (flag) {
             let state = true
-            props.dataBase.map((data) => {
+            let dataID = ''
+            props.dataBase.map((data, index) => {
                 if ((details.userDetail === data.userName || details.userDetail === data.emailId) && state) {
                     if (details.enteredpass === data.password) {
                         setInvalide((current) => false)                      
                         state = false
+                        dataID = index
                     }
                 }
                 else if (!showInvalid && state) {setInvalide(true)}
                 return (!showInvalid)
             })
             if (!showInvalid && !state) {
-                props.HandleLogin()
+                props.HandleLogin(dataID)
             }
         }
     }

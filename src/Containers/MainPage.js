@@ -40,13 +40,16 @@ const MainPage = () => {
     const [loginModalState, setLoginModalState] = useState(false)
     const [dialogState, setDialogState] = useState(false)
     const [dataBase, setDataBase] = useState(null)
+    const [apiKeys, setAPIKeys] = useState([])
 
     useEffect(() => {
         axios.get(`https://my-project-database-c4a55-default-rtdb.firebaseio.com/.json`)
             .then(res => {
                 if (!dataBase) {
                     const dataBaseArray = Object.entries(res.data).map((e) => { return (e[1])})
+                    const APIKey = Object.entries(res.data).map((e) => { return (e[0])})
                     setDataBase(dataBaseArray)
+                    setAPIKeys(APIKey)
                 }
             })
             .catch(err => console.log(err))
@@ -118,8 +121,8 @@ const MainPage = () => {
         LoginModalhandler()
         ModalHandler()
     }
-    const HandleLogin = () => {
-        history.push('/details')
+    const HandleLogin = (dataID) => {
+        history.push(`/details?${apiKeys[dataID]}`)
     }
 
     return(

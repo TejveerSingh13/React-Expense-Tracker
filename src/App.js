@@ -9,7 +9,7 @@ const App = () => {
   return (
     <Router basename="/">
       <Route path='/' exact component={MainPage} />
-      <Route path='/details' exact component={DisplayDetails} />
+      <Route path='/details' component={DisplayDetails} />
     </Router>   
   );
 }
