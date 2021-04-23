@@ -5,7 +5,7 @@ const InputField = (props) => {
     return(
         <label>
             <LabelInput>{props.label}</LabelInput>
-            <Input  type='text' 
+            <Input  type={props.type} 
             onChange={props.onChange} 
             name={props.name} 
             onBlur={props.onBlur} 

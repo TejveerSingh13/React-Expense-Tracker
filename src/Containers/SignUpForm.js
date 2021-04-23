@@ -146,7 +146,7 @@ const SignUpForm = (props) => {
         const validate = validateError()
         let check = false
         if (validate){
-             if (passData.password !== passData.confirmPass){
+             if (password !== confirmPass){
                 checkPasswordErrorHandle(confirmPass, formErrors)
                 setFormErrors({...formErrors})
             } 
@@ -163,6 +163,7 @@ const SignUpForm = (props) => {
                 <Row>
                   <Col xs={6}>
                     <InputField 
+                      type = 'text'
                       label='Full Name' 
                       name='name' 
                       value={fullName}
@@ -172,6 +173,7 @@ const SignUpForm = (props) => {
                   </Col>
                   <Col xs={6}>
                     <InputField 
+                    type = 'text'
                       label='User Name' 
                       name='user' 
                       value={userName}
@@ -181,6 +183,7 @@ const SignUpForm = (props) => {
                   </Col>
                   <Col xs={12}>
                       <InputField 
+                      type = 'text'
                         label='Mobile Number' 
                         name='mobileNo' 
                         value={mobile}
@@ -190,6 +193,7 @@ const SignUpForm = (props) => {
                   </Col>
                   <Col xs={12}>
                       <InputField 
+                      type = 'text'
                         label='Email-ID' 
                         name='emailId' 
                         value={email}
@@ -199,6 +203,7 @@ const SignUpForm = (props) => {
                   </Col>
                   <Col xs={12}>
                       <InputField 
+                      type = 'password'
                         label='Create Password' 
                         name='passNew'
                         value={password}
@@ -208,6 +213,7 @@ const SignUpForm = (props) => {
                   </Col>
                   <Col xs={12}>
                       <InputField 
+                      type = 'password'
                         label='Confirm Password' 
                         name='passConfirm' 
                         value={confirmPass}

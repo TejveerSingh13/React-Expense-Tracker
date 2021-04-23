@@ -30,12 +30,7 @@ const MainPage = () => {
         password : '',
         confirmPass : ''
     }
-    const passReset = {
-        passsNew :'',
-        passConf : ''
-    }
     const [formValue, setFormValue] = useState(formReset)
-    const [passwordDisplay, updatePasswordDisplay] = useState(passReset)
     const [signUpModalState, setSignUpModalState] = useState(false)
     const [loginModalState, setLoginModalState] = useState(false)
     const [dialogState, setDialogState] = useState(false)
@@ -54,7 +49,7 @@ const MainPage = () => {
             })
             .catch(err => console.log(err))
     },[dataBase])
-
+    
     const inputHandler = (e) => {
         const data = e.target.value
         switch (e.target.name) {
@@ -77,23 +72,11 @@ const MainPage = () => {
             break
             }
             case 'passNew':{
-            if (data.slice(-1) === '*' || data.slice(-1) === '') {
-                setFormValue({...formValue, password: formValue.password.slice(0, data.length) })
-            }
-            else {
-                setFormValue({...formValue, password: formValue.password + data.slice(-1) })
-            }
-            updatePasswordDisplay({...passwordDisplay, passsNew:'*'.repeat(data.length)})
+            setFormValue({...formValue, password: data })
             break
             }
             case 'passConfirm':{
-            if (data.slice(-1) === '*' || data.slice(-1) === '') {
-                setFormValue({...formValue, confirmPass: formValue.confirmPass.slice(0, data.length) })
-            }
-            else {
-                setFormValue({...formValue, confirmPass: formValue.confirmPass + data.slice(-1) })
-            }
-            updatePasswordDisplay({...passwordDisplay, passConf:'*'.repeat(data.length)})
+            setFormValue({...formValue, confirmPass: data })
             break
             }
             default:
@@ -105,7 +88,9 @@ const MainPage = () => {
         ModalHandler()
         DialogHandler()
         setFormValue(formReset)
-        updatePasswordDisplay(passReset)
+        setTimeout(() => {
+            setDataBase(null)
+        },5000)
     }
     
     const ModalHandler = () => {
@@ -145,8 +130,8 @@ const MainPage = () => {
                     userName = {formValue.userName}
                     mobile = {formValue.mobile}
                     email = {formValue.emailId}
-                    password = {passwordDisplay.passsNew}
-                    confirmPass = {passwordDisplay.passConf}
+                    password = {formValue.password}
+                    confirmPass = {formValue.confirmPass}
                     passData = {formValue}
                     dataBase = {dataBase} />
                 </Modal>}
