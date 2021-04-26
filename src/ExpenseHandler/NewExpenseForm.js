@@ -5,12 +5,14 @@ import {
     InputCover,
     InputLabel,
     ButtonContainer,
-    FormButton
+    FormButton,
+    ExpenseFormTitle
  } from "./style";
 
 const NewExpenseForm = (props) => {
     return(
         <ExpenseFormWrapper height={props.height} margin={props.margin}>
+            <ExpenseFormTitle>Enter your Expense</ExpenseFormTitle>
             <InputCover>
             <InputLabel>Value</InputLabel>
             <TestInput type='text'  />

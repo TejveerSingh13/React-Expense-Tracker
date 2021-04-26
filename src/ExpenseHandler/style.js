@@ -137,8 +137,8 @@ export const ExpenseFormWrapper = styled.div`
     border-radius: 12px;
     box-shadow:0 0 17px -5px #006699;
     overflow: hidden;
-    margin:${props => props.margin ? '24px auto ' : '0 auto'};
-    height: ${props => props.height ? '39vh' : '0vh'};
+    margin:${props => props.margin ? '24px auto 0 ' : '0 auto'};
+    height: ${props => props.height ? '43vh' : '0vh'};
     transition-property: height, margin; 
     transition-duration: 1s; 
     @media (min-width: 558px) {
@@ -247,4 +247,9 @@ export const ExpenseDetailsWrapper = styled.div`
     @media (min-width: 558px) {
         height: 300px;
     }
+`
+export const ExpenseFormTitle = styled.div`
+    color: #002b80;
+    margin: 12px auto 0px 16px;
+    font-size: 18px;
 `
