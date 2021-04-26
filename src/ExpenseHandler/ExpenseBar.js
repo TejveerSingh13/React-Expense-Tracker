@@ -26,73 +26,73 @@ const ExpenseBars = () => {
             <ExpenseBarWrapper>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '0' />
                     </ExpenseBar>
                     <ExpenseBarLabel>Jan</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '20'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Feb</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '40'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Mar</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '60'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Apr</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '80' />
                     </ExpenseBar>
                     <ExpenseBarLabel>May</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '100'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Jun</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '80' />
                     </ExpenseBar>
                     <ExpenseBarLabel>Jul</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '60'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Aug</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '40'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Sep</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '20' />
                     </ExpenseBar>
                     <ExpenseBarLabel>Oct</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '42'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Nov</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>
                 <ExpenseBarLabelContainer>
                     <ExpenseBar>
-                            <ExpenseBarIndicator />
+                            <ExpenseBarIndicator height = '69'/>
                     </ExpenseBar>
                     <ExpenseBarLabel>Dec</ExpenseBarLabel>
                 </ExpenseBarLabelContainer>

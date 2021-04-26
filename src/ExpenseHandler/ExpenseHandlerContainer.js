@@ -1,12 +1,14 @@
 import React, {useState} from "react";
-import ExpenseBars from "./ExpenseBar";
 import NewExpenseForm from "./NewExpenseForm";
+import ExpenseBars from "./ExpenseBar";
+import ExpenseDetails from "./ExpenseDetails";
 import {
     MainContainer,
     HeadderContainer,
     HeadderText,
     HeadderImgDiv,
-    HeadderImg
+    HeadderImg,
+    ExpenseDetailsWrapper
   } from "./style";
 
 const ExpenseHandler = () => {
@@ -29,6 +31,14 @@ const ExpenseHandler = () => {
                 </HeadderContainer>
                 <NewExpenseForm height={formState} margin={formState} />
                 <ExpenseBars />
+                <HeadderText detail='true'>Your Expenses</HeadderText>
+                <ExpenseDetailsWrapper>
+                    <ExpenseDetails />
+                    <ExpenseDetails />
+                    <ExpenseDetails />
+                    <ExpenseDetails />
+                    <ExpenseDetails />
+                </ExpenseDetailsWrapper>
         </MainContainer>
     )
 }

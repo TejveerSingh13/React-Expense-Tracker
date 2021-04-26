@@ -24,7 +24,7 @@ const NewExpenseForm = (props) => {
             <TestInput type='date' style={{backgroundColor:'white'}} />
             </InputCover>
             <ButtonContainer>
-                <FormButton>Add</FormButton>
+                <FormButton>Save</FormButton>
             </ButtonContainer>
         </ExpenseFormWrapper>
     )

@@ -40,7 +40,7 @@ export const ExpenseBar = styled.div`
     }
 `
 export const ExpenseBarIndicator = styled.div`
-    height: 50%;
+    height: ${props => props.height + '%'};
     background-image: linear-gradient(#e60000, #ffcc66, #99ff33);
     border-radius: 24px;
     
@@ -53,6 +53,7 @@ export const HeadderText = styled.p`
     margin: 0 auto 0 4px;
     color: #006699;
     font-size: ${props => props.name ? '40px' : '32px'};
+    font-size: ${props => props.detail ? '22px' : '32px'};
     text-shadow: 0 0 9px #99ebff;
     @media (min-width: 558px) {
         margin: 0 auto 0 28px;
@@ -75,6 +76,7 @@ export const ExpenseBarContainer = styled.div`
     background-color:  #006699;
     border-radius: 12px;
     margin-top: 32px;
+    margin-bottom: 36px;
     display: flex;
     overflow: auto;
     height: ${props => props.height ? '78vh' : '8vh'};
@@ -184,4 +186,65 @@ export const FormButton = styled.button`
     cursor: pointer;
     box-shadow:0 0 15px #99ebff;
   }
+`
+export const ExpenseDetailContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  border-radius: 6px;
+  box-shadow:0 0 12px -3px #006699;
+  @media (min-width: 558px) {
+    margin: 12px 28px;
+  }
+`
+export const DateDetails = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
+  padding: 3px 6px;
+  border-radius: 6px;
+  background-color:#0099cc;
+  @media (min-width: 558px) {
+    margin: 6px 15px;
+    padding: 3px 18px;
+  }
+`
+export const DateDetailsText = styled.div`
+  color: white;
+  font-size: ${props => props.date ? '22px' : '16px'};
+  line-height: 18px;
+  margin: 1px;
+`
+export const DivFlexColumn = styled.div`
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+`
+export const DateDetailsAmount = styled.div`
+  color: white;
+  background-color:#0099cc;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 6px;
+  margin: 6px;
+  @media (min-width: 558px) {
+    margin: 6px 15px;
+  }
+`
+export const ExpenseDetailsDescription = styled.div`
+    color: #006699;
+    font-size: 16px;
+    margin: 0 12px;
+    @media (min-width: 558px) {
+        font-size:22px;
+    }
+`
+export const ExpenseDetailsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 400px;
+    @media (min-width: 558px) {
+        height: 300px;
+    }
 `
