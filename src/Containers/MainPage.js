@@ -107,7 +107,7 @@ const MainPage = () => {
         ModalHandler()
     }
     const HandleLogin = (dataID) => {
-        history.push(`/details?${apiKeys[dataID]}`)
+        history.push(`/expenses?${apiKeys[dataID]}`)
     }
 
     return(
