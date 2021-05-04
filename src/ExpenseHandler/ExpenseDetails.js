@@ -8,19 +8,19 @@ import {
     ExpenseDetailsDescription
  } from "./style";
 
-const ExpenseDetails = () => {
+const ExpenseDetails = (props) => {
     return(
         <ExpenseDetailContainer>
             <DateDetails>
-                <DateDetailsText>April</DateDetailsText>
-                <DateDetailsText date='true'>26</DateDetailsText>
-                <DateDetailsText>2021</DateDetailsText>
+                <DateDetailsText>{props.month}</DateDetailsText>
+                <DateDetailsText date='true'>{props.date}</DateDetailsText>
+                <DateDetailsText>{props.year}</DateDetailsText>
             </DateDetails>
             <DivFlexColumn>
-                <ExpenseDetailsDescription>Show Expense Detail</ExpenseDetailsDescription>
+                <ExpenseDetailsDescription>{props.label}</ExpenseDetailsDescription>
             </DivFlexColumn>
             <DivFlexColumn>
-                <DateDetailsAmount>₹ 2500/-</DateDetailsAmount>
+                <DateDetailsAmount>{`₹ ${props.amount}/-`}</DateDetailsAmount>
             </DivFlexColumn>    
         </ExpenseDetailContainer>
     )

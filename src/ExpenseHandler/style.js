@@ -50,7 +50,7 @@ export const HeadderContainer = styled.div`
     justify-content: space-between;
 `
 export const HeadderText = styled.p`
-    margin: 0 auto 0 4px;
+    margin: ${props => props.detail ? '0 auto 24px 4px' : '0 auto 0 4px'};
     color: #006699;
     font-size: ${props => props.name ? '40px' : '32px'};
     font-size: ${props => props.detail ? '22px' : '32px'};
@@ -71,6 +71,19 @@ export const HeadderImg = styled(ChangeDateIcon)`
     @media (min-width: 558px) {
         margin: auto 28px 0 auto;
     }
+`
+export const Signout = styled.div`
+  color: #006699;
+  text-shadow: 0 0 9px white;
+  font-size: larger;
+  margin: -20px 8px 0 0;
+  &:hover {
+    color: #004466;
+    cursor: pointer;
+  }
+  @media (min-width: 558px) {
+    margin: -14px 26px 0 0;
+}
 `
 export const ExpenseBarContainer = styled.div`
     background-color:  #006699;
@@ -105,6 +118,7 @@ export const ExpenseBarWrapper = styled.div`
     justify-content: space-evenly;
     @media (min-width: 558px) {
         display: flex;
+        overflow: hidden;
     }
 `
 export const ExpenseBarContainerTitle = styled.div`
@@ -157,6 +171,7 @@ export const InputCover = styled.div`
   flex-direction: column;
   width: 224px;
   margin: 16px 24px 16px;
+  border-bottom: ${props => props.error ? '3px solid red' : null};
   @media (min-width: 558px) {
     width: 448px;
   }
@@ -201,6 +216,7 @@ export const DateDetails = styled.div`
   display: flex;
   flex-direction: column;
   margin: 6px;
+  align-items: center;
   padding: 3px 6px;
   border-radius: 6px;
   background-color:#0099cc;
@@ -252,4 +268,9 @@ export const ExpenseFormTitle = styled.div`
     color: #002b80;
     margin: 12px auto 0px 16px;
     font-size: 18px;
+`
+export const ExpenseDetailsError = styled.div`
+    margin: auto;
+    font-size: x-large;
+    color: red;
 `

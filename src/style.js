@@ -1,6 +1,7 @@
 import styled, { keyframes } from 'styled-components'
 import DetailBgImg from "../src/icons/BlueBg.jpeg";
 
+
 export const MainContainer = styled.div`
   background-color: #e6faff;
   position: fixed;
