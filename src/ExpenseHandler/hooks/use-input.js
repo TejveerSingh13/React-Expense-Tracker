@@ -1,8 +1,8 @@
 import { useState } from "react";
 
-const useInput = (validation) => {
+const useInput = (validation,initVal) => {
 
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState(initVal)
     const [showError, setShowError] = useState(false)
 
     const handleOnChange = (event) => {

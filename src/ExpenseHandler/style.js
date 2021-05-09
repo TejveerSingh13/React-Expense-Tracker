@@ -92,6 +92,7 @@ export const ExpenseBarContainer = styled.div`
     margin-bottom: 36px;
     display: flex;
     overflow: auto;
+    padding-right: 20px;
     height: ${props => props.height ? '78vh' : '8vh'};
     transition: height 1s;
     flex-direction: column;
@@ -140,7 +141,7 @@ export const DropdownIcon = styled(BackIcon)`
     fill: white;
     transform: ${props => props.isopen ? 'rotate(90deg)' : 'rotate(-90deg)'};
     transition: transform 0.8s;
-    margin: 32px 24px 0 auto;
+    margin: 32px 2px 0 auto;
     @media (min-width: 558px) {
         width: 0;
         height: 0;
@@ -250,9 +251,12 @@ export const DateDetailsAmount = styled.div`
 export const ExpenseDetailsDescription = styled.div`
     color: #006699;
     font-size: 16px;
-    margin: 0 12px;
+    margin: 0 8px;
+    word-break: break-all;
+    width: 125px;
     @media (min-width: 558px) {
         font-size:22px;
+        width: auto;
     }
 `
 export const ExpenseDetailsWrapper = styled.div`
@@ -273,4 +277,23 @@ export const ExpenseDetailsError = styled.div`
     margin: auto;
     font-size: x-large;
     color: red;
+`
+export const ButtonContainerUpdate = styled.div`
+  display:flex;
+  justify-content: space-around;
+`
+export const FormButtonUpdate = styled.button`
+  margin: 27px auto 0;
+  padding: 12px;
+  width: 73px;
+  border: none;
+  border-radius:20px;
+  color: white;
+  outline: none;
+  box-shadow:0 0 9px #99ebff;
+  background-color: ${props => props.green ? '#66ff66' : (props.red ? '#ff4d4d' : '#0099cc')};
+  &:hover {
+    cursor: pointer;
+    box-shadow:0 0 15px #99ebff;
+  }
 `

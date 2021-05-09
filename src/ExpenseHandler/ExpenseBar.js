@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import { Container, Row, Col } from "react-grid-system";
 import { 
     ExpenseBarContainer,
     ExpenseBar,
@@ -11,9 +12,69 @@ import {
     ExpenseBarContainerHeadder
  } from "./style";
 
-const ExpenseBars = () => {
+const ExpenseBars = (props) => {
 
+    const MONTHS = [
+        {
+            month: 'Jan',
+            total: 0
+        },{
+            month: 'Feb',
+            total: 0
+        },{
+            month: 'Mar',
+            total: 0
+        },{
+            month: 'Apr',
+            total: 0
+        },{
+            month: 'May',
+            total: 0
+        },{
+            month: 'Jun',
+            total: 0
+        },{
+            month: 'Jul',
+            total: 0
+        },{
+            month: 'Aug',
+            total: 0
+        },{
+            month: 'Sep',
+            total: 0
+        },{
+            month: 'Oct',
+            total: 0
+        },{
+            month: 'Nov',
+            total: 0
+        },{
+            month: 'Dec',
+            total: 0
+        }
+    ]
     const [expenseBarStatus, updateExpenseBarStatus] = useState(false)
+    let max = 0
+    
+    const UpdateMonthData = (month, value) => {
+        MONTHS[month].total += +value
+    }
+    const FindMax = () => {
+        max = Math.max(...MONTHS.map(d =>  d.total),0) 
+    }
+
+    if(props.data){
+        Object.entries(props.data).map(d=> {
+        const expenseData = d[1]
+        const date = new Date(expenseData.date)
+        if( date.getFullYear() === 2021) {
+            UpdateMonthData(date.getMonth(),d[1].value)
+        }
+
+        return true
+        })
+        FindMax()  
+    }
 
     const HandleExpenseBarDrop = () => updateExpenseBarStatus(current => !current)
 
@@ -24,78 +85,21 @@ const ExpenseBars = () => {
                 <DropdownIcon isopen={expenseBarStatus} onClick={HandleExpenseBarDrop} />
             </ExpenseBarContainerTitle>
             <ExpenseBarWrapper>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '0' />
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Jan</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '20'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Feb</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '40'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Mar</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '60'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Apr</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '80' />
-                    </ExpenseBar>
-                    <ExpenseBarLabel>May</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '100'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Jun</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '80' />
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Jul</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '60'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Aug</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '40'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Sep</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '20' />
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Oct</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '42'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Nov</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
-                <ExpenseBarLabelContainer>
-                    <ExpenseBar>
-                            <ExpenseBarIndicator height = '69'/>
-                    </ExpenseBar>
-                    <ExpenseBarLabel>Dec</ExpenseBarLabel>
-                </ExpenseBarLabelContainer>
+                <Container>
+                    <Row>
+                        {MONTHS.map(data => {
+                            return(
+                                <Col xs={3} sm={3} md={1} key={data.month}>
+                                    <ExpenseBarLabelContainer>
+                                        <ExpenseBar>
+                                            <ExpenseBarIndicator height = {(data.total/max)*100} />
+                                        </ExpenseBar>
+                                        <ExpenseBarLabel>{data.month}</ExpenseBarLabel>
+                                    </ExpenseBarLabelContainer>
+                                </Col>
+                            )})}
+                    </Row>
+                </Container>
             </ExpenseBarWrapper>
         </ExpenseBarContainer>
     )

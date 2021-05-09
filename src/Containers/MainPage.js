@@ -17,11 +17,13 @@ import SuccessButton from "../icons/checkLight.png";
 import Modal from "../Components/Modal";
 import SignUpForm from "./SignUpForm";
 import LoginForm from "./LoginPage";
+import Loader from "../Components/Loader";
 import axios from 'axios';
 
 const MainPage = () => {
     
     const history = useHistory();
+    localStorage.setItem('isLogin', false)
     const formReset = {
         fullName : '',
         userName : '',
@@ -31,6 +33,7 @@ const MainPage = () => {
         confirmPass : ''
     }
     const [formValue, setFormValue] = useState(formReset)
+    const [isLoading, setIsLoading] = useState(true)
     const [signUpModalState, setSignUpModalState] = useState(false)
     const [loginModalState, setLoginModalState] = useState(false)
     const [dialogState, setDialogState] = useState(false)
@@ -45,6 +48,7 @@ const MainPage = () => {
                     const APIKey = Object.entries(res.data).map((e) => { return (e[0])})
                     setDataBase(dataBaseArray)
                     setAPIKeys(APIKey)
+                    setIsLoading(false)
                 }
             })
             .catch(err => console.log(err))
@@ -107,7 +111,11 @@ const MainPage = () => {
         ModalHandler()
     }
     const HandleLogin = (dataID) => {
-        history.push(`/expenses?${apiKeys[dataID]}`)
+        localStorage.setItem('ID',apiKeys[dataID])
+        localStorage.setItem('isLogin', true)
+        history.push({
+            pathname: `/expenses/${dataBase[dataID].userName}`
+        })
     }
 
     return(
@@ -155,6 +163,7 @@ const MainPage = () => {
                         </LoginButton>
                     </DialogContainer>
                 </Modal>}
+                {isLoading && <Loader />}
             </MainContainer>
         </Fragment>
     )

@@ -1,19 +1,21 @@
 import React from 'react';
 import { 
   HashRouter as Router,
-  Route
+  Route,
+  Switch
  } from "react-router-dom";
 import MainPage from "./Containers/MainPage";
-import UnderConstruction from "./Components/UnderConstruction";
-// import ExpenseHandler from "./ExpenseHandler/ExpenseHandlerContainer";
+import PageNotFound from "./Components/404File";
+import ExpenseHandler from "./ExpenseHandler/ExpenseHandlerContainer";
 const App = () => {
   return (
     <Router basename="/">
-      <Route path='/' exact component={MainPage} />
-      {/* <Route path='/expenses' component={ExpenseHandler} /> */}
-      <Route path='/expenses' component={UnderConstruction} />
+      <Switch>
+        <Route path='/' exact component={MainPage} />
+        <Route path='/expenses/:userName' component={ExpenseHandler} />
+        <Route path='*' component={PageNotFound} />
+      </Switch>
     </Router>   
-    // <ExpenseHandler />
   );
 }
 

@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import useInput from "./hooks/use-input";
 import { 
     ExpenseFormWrapper,
@@ -14,14 +14,8 @@ const NewExpenseForm = (props) => {
     
     const MaxDate = new Date().toISOString().slice(0, 10)
 
-    // const [data, setData] = useState({
-    //     amount: '',
-    //     description:'',
-    //     date:''
-    // })
-
     const validateAmount =  (value) => {
-        const state = (value === '' || value < 0) ? true : false 
+        const state = (value === '' || value <= 0) ? true : false 
         return state
     }
     const validateDescription =  (value) => {
@@ -35,21 +29,21 @@ const NewExpenseForm = (props) => {
         handleOnChange :handleOnChangeAmount,
         handleOnBlur: handleOnBlurAmount,
         resetValue: resetExpenseAmount
-      } = useInput(validateAmount)
+      } = useInput(validateAmount, '')
     const {
         value : enteredDescr,
         showError: showDescrError,
         handleOnChange :handleOnChangeDescr,
         handleOnBlur: handleOnBlurDescr,
         resetValue: resetDescr
-      } = useInput(validateDescription)
+      } = useInput(validateDescription, '')
     const {
         value : enteredDate,
         showError: showDateError,
         handleOnChange :handleOnChangeDate,
         handleOnBlur: handleOnBlurDate,
         resetValue: resetDate
-      } = useInput(validateDescription)
+      } = useInput(validateDescription, '')
     const resetInputs = () => {
         resetExpenseAmount()
         resetDescr()
@@ -57,18 +51,11 @@ const NewExpenseForm = (props) => {
     }
     const submitHandler = () => {
         if (!showAmountError && !showDescrError && !showDateError) {
-            console.log('inside if, entered data->', enteredAmount, enteredDate, enteredDescr);
             const DATA = {
                 value: enteredAmount,
                 description: enteredDescr,
                 date: enteredDate
             }
-            // setData({
-            //     amount: enteredAmount,
-            //     description: enteredDescr,
-            //     date: enteredDate
-            // })
-            console.log('after',DATA);
             props.submit(DATA)
             resetInputs()
         }
