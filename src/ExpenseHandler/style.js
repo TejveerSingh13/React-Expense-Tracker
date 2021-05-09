@@ -94,7 +94,7 @@ export const ExpenseBarContainer = styled.div`
     overflow: auto;
     padding-right: 20px;
     height: ${props => props.height ? '78vh' : '8vh'};
-    transition: height 1s;
+    transition: height 0.5s;
     flex-direction: column;
     padding-bottom: 18px;
     @media (min-width: 558px) {
@@ -114,7 +114,7 @@ export const ExpenseBarLabelContainer = styled.div`
     flex-direction: column;
 `
 export const ExpenseBarWrapper = styled.div`
-    display: flex;
+    display: ${props => props.isopen ? 'flex' : 'none'};
     flex-wrap: wrap;
     justify-content: space-evenly;
     @media (min-width: 558px) {
@@ -151,7 +151,7 @@ export const ExpenseFormWrapper = styled.div`
     background-color: white;
     border-radius: 12px;
     box-shadow:0 0 17px -5px #006699;
-    overflow: hidden;
+    overflow: auto;
     margin:${props => props.margin ? '24px auto 0 ' : '0 auto'};
     height: ${props => props.height ? '43vh' : '0vh'};
     transition-property: height, margin; 

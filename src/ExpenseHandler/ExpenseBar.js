@@ -85,7 +85,7 @@ const ExpenseBars = (props) => {
                 <ExpenseBarContainerHeadder>View Monthly Expense Chart</ExpenseBarContainerHeadder>
                 <DropdownIcon isopen={expenseBarStatus} onClick={HandleExpenseBarDrop} />
             </ExpenseBarContainerTitle>
-            <ExpenseBarWrapper>
+            <ExpenseBarWrapper isopen={expenseBarStatus}>
                 <Container>
                     <Row>
                         {MONTHS.map(data => {
