@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Expense Keeper V.1.0",
+  "name": "Expense Keeper",
   "icons": [
     {
       "src": "favicon.ico",

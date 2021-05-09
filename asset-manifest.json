@@ -1,28 +1,31 @@
 {
   "files": {
     "main.css": "/React-Forms-Project/static/css/main.914f628c.chunk.css",
-    "main.js": "/React-Forms-Project/static/js/main.4bc8bc0e.chunk.js",
-    "main.js.map": "/React-Forms-Project/static/js/main.4bc8bc0e.chunk.js.map",
-    "runtime-main.js": "/React-Forms-Project/static/js/runtime-main.acb07992.js",
-    "runtime-main.js.map": "/React-Forms-Project/static/js/runtime-main.acb07992.js.map",
-    "static/js/2.9e7134ae.chunk.js": "/React-Forms-Project/static/js/2.9e7134ae.chunk.js",
-    "static/js/2.9e7134ae.chunk.js.map": "/React-Forms-Project/static/js/2.9e7134ae.chunk.js.map",
-    "static/js/3.be9c9e97.chunk.js": "/React-Forms-Project/static/js/3.be9c9e97.chunk.js",
-    "static/js/3.be9c9e97.chunk.js.map": "/React-Forms-Project/static/js/3.be9c9e97.chunk.js.map",
+    "main.js": "/React-Forms-Project/static/js/main.7f3cc642.chunk.js",
+    "main.js.map": "/React-Forms-Project/static/js/main.7f3cc642.chunk.js.map",
+    "runtime-main.js": "/React-Forms-Project/static/js/runtime-main.22575d12.js",
+    "runtime-main.js.map": "/React-Forms-Project/static/js/runtime-main.22575d12.js.map",
+    "static/js/2.8da29a4f.chunk.js": "/React-Forms-Project/static/js/2.8da29a4f.chunk.js",
+    "static/js/2.8da29a4f.chunk.js.map": "/React-Forms-Project/static/js/2.8da29a4f.chunk.js.map",
+    "static/js/3.12214ce2.chunk.js": "/React-Forms-Project/static/js/3.12214ce2.chunk.js",
+    "static/js/3.12214ce2.chunk.js.map": "/React-Forms-Project/static/js/3.12214ce2.chunk.js.map",
     "index.html": "/React-Forms-Project/index.html",
     "static/css/main.914f628c.chunk.css.map": "/React-Forms-Project/static/css/main.914f628c.chunk.css.map",
-    "static/js/2.9e7134ae.chunk.js.LICENSE.txt": "/React-Forms-Project/static/js/2.9e7134ae.chunk.js.LICENSE.txt",
+    "static/js/2.8da29a4f.chunk.js.LICENSE.txt": "/React-Forms-Project/static/js/2.8da29a4f.chunk.js.LICENSE.txt",
     "static/media/BlueBg.0ceb1871.jpeg": "/React-Forms-Project/static/media/BlueBg.0ceb1871.jpeg",
+    "static/media/back.a98e70f8.svg": "/React-Forms-Project/static/media/back.a98e70f8.svg",
     "static/media/cancel.2a41109c.svg": "/React-Forms-Project/static/media/cancel.2a41109c.svg",
+    "static/media/change-day.a15d8131.svg": "/React-Forms-Project/static/media/change-day.a15d8131.svg",
     "static/media/checkLight.1c1b610a.png": "/React-Forms-Project/static/media/checkLight.1c1b610a.png",
+    "static/media/loading.ca0bcd65.svg": "/React-Forms-Project/static/media/loading.ca0bcd65.svg",
     "static/media/lock.4b6885f8.svg": "/React-Forms-Project/static/media/lock.4b6885f8.svg",
-    "static/media/underCon.bccf77a1.jpg": "/React-Forms-Project/static/media/underCon.bccf77a1.jpg",
+    "static/media/pixeltrue-error.035d4186.png": "/React-Forms-Project/static/media/pixeltrue-error.035d4186.png",
     "static/media/user.e559be5f.svg": "/React-Forms-Project/static/media/user.e559be5f.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.acb07992.js",
-    "static/js/2.9e7134ae.chunk.js",
+    "static/js/runtime-main.22575d12.js",
+    "static/js/2.8da29a4f.chunk.js",
     "static/css/main.914f628c.chunk.css",
-    "static/js/main.4bc8bc0e.chunk.js"
+    "static/js/main.7f3cc642.chunk.js"
   ]
 }
