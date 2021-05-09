@@ -53,6 +53,7 @@ const ExpenseBars = (props) => {
             total: 0
         }
     ]
+    const DATE = new Date().getFullYear()
     const [expenseBarStatus, updateExpenseBarStatus] = useState(false)
     let max = 0
     
@@ -67,7 +68,7 @@ const ExpenseBars = (props) => {
         Object.entries(props.data).map(d=> {
         const expenseData = d[1]
         const date = new Date(expenseData.date)
-        if( date.getFullYear() === 2021) {
+        if( date.getFullYear() === DATE) {
             UpdateMonthData(date.getMonth(),d[1].value)
         }
 

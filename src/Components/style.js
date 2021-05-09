@@ -12,8 +12,8 @@ export const Img = styled.img`
   margin: auto ;
   border-radius: 50px;
   @media (min-width: 558px) {
-    height:600px;
-    width:800px;  
+    height:500px;
+    width:600px;  
   }
 `
 export const Text = styled.p`
@@ -58,4 +58,18 @@ export const LoaderImg = styled(Loading)`
    width: 70px;
    animation: ${loader} 1s linear infinite;
    z-index: 500;
+`
+export const FormButtonUpdate = styled.button`
+  margin: 27px auto;
+  padding: 12px;
+  border: none;
+  border-radius:20px;
+  color: white;
+  outline: none;
+  box-shadow:0 0 9px #99ebff;
+  background-color: #0099cc;
+  &:hover {
+    cursor: pointer;
+    box-shadow:0 0 15px #99ebff;
+  }
 `
